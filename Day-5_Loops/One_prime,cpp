@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+bool isPrime(int n) {
+    if (n < 2) return false; // Numbers less than 2 are not prime
+    for (int i = 2; i * i <= n; ++i) { // Check up to the square root of n
+        if (n % i == 0) return false; // If n is divisible by i, it's not prime
+    }
+    return true; // If no divisors were found, it's prime
+}
+
+int main() {
+    int X;
+    cin >> X; // Input number X
+
+    if (isPrime(X)) {
+        cout << "YES" << endl; // Output YES if X is prime
+    } else {
+        cout << "NO" << endl;  // Output NO if X is not prime
+    }
+
+    return 0;
+}
